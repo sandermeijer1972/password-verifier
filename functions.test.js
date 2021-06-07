@@ -4,7 +4,9 @@ const {
     hasUpperCaseCharacter,
     hasLowerCaseCharacter,
     hasDigit,
-  } = require("./functions.js");
+    minimumConditionsReached,
+    verifyPassword,
+} = require("./functions.js");
 
 
   //Not null
@@ -60,3 +62,62 @@ test('Henkie has no number', () => {
 test('Henkie1 has a number', () => {
     expect(hasDigit("Henkie1")).toBe(true);
 });
+
+
+//Minimum Conditions
+
+test('Minimum conditions all false', () => {
+    expect(minimumConditionsReached([false, false, false, false, false])).toBe(false);
+});
+
+test('Minimum conditions only 1 true', () => {
+    expect(minimumConditionsReached([false, true, false, false, false])).toBe(false);
+});
+
+test('Minimum conditions only 2 true', () => {
+    expect(minimumConditionsReached([true, true, false, false, false])).toBe(false);
+});
+
+test('Minimum conditions only 2 others true', () => {
+    expect(minimumConditionsReached([false, false, true, false, true])).toBe(false);
+});
+
+test('Minimum conditions 3 times true', () => {
+    expect(minimumConditionsReached([true, true, true, false, false])).toBe(true);
+});
+
+test('Minimum conditions 3 other true', () => {
+    expect(minimumConditionsReached([false, true, false, true, true])).toBe(true);
+});
+
+test('Mimimum conditions only 1 false', () => {
+    expect(minimumConditionsReached([true, true, true, true, false])).toBe(true);
+});
+
+test('Minimum conditions all true', () => {
+    expect(minimumConditionsReached([true, true, true, true, true])).toBe(true);
+});
+
+
+//Password verifier
+
+test('Henk123 is a good password', () => {
+    expect(verifyPassword("Henk123")).toBe(true);
+});
+
+test('HENK123 is not a good password', () => {
+    expect(verifyPassword("HENK123")).toBe(false);
+});
+
+test('h is a good password', () => {
+    expect(verifyPassword("h")).toBe(true);
+});
+
+test('Henk33$ is a good password', () => {
+    expect(verifyPassword("Henk33$")).toBe(true);
+});
+
+test('empty-string is not a good password', () => {
+    expect(verifyPassword("")).toBe(false);
+});
+

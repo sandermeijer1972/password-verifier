@@ -11,7 +11,7 @@ const hasDigit = (password) => /[0-9]/.test(password);
 const minimumConditionsReached = (conditions) => {
   // conditions is an array of booleans
   trueConditions = conditions.filter(bool => bool);
-  return trueConditions.length >= 3;
+  return trueConditions.length >= 5;
 };
 
 // "Outer" function
@@ -23,8 +23,9 @@ const verifyPassword = (password) => {
       hasLowerCaseCharacter(password),
       hasDigit(password)
   ];
+  console.log(conditions);
   const result =
-      minimumConditionsReached(conditions) && hasLowerCaseCharacter(password);
+      minimumConditionsReached(conditions);
   console.log(result);
   return result;
 };

@@ -83,15 +83,15 @@ test('Minimum conditions only 2 others true', () => {
 });
 
 test('Minimum conditions 3 times true', () => {
-    expect(minimumConditionsReached([true, true, true, false, false])).toBe(true);
+    expect(minimumConditionsReached([true, true, true, false, false])).toBe(false);
 });
 
 test('Minimum conditions 3 other true', () => {
-    expect(minimumConditionsReached([false, true, false, true, true])).toBe(true);
+    expect(minimumConditionsReached([false, true, false, true, true])).toBe(false);
 });
 
 test('Mimimum conditions only 1 false', () => {
-    expect(minimumConditionsReached([true, true, true, true, false])).toBe(true);
+    expect(minimumConditionsReached([true, true, true, true, false])).toBe(false);
 });
 
 test('Minimum conditions all true', () => {
@@ -109,8 +109,8 @@ test('HENK123 is not a good password', () => {
     expect(verifyPassword("HENK123")).toBe(false);
 });
 
-test('h is a good password', () => {
-    expect(verifyPassword("h")).toBe(true);
+test('h is not a good password', () => {
+    expect(verifyPassword("h")).toBe(false);
 });
 
 test('Henk33$ is a good password', () => {

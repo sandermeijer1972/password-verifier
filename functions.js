@@ -25,7 +25,7 @@ const verifyPassword = (password) => {
   ];
   const result =
       minimumConditionsReached(conditions) && hasLowerCaseCharacter(password);
-
+  console.log(result);
   return result;
 };
 

@@ -1,0 +1,59 @@
+.blue {
+    background-color: #0066FF;
+}
+
+.green {
+    background-color: #00CC00;
+}
+
+.red {
+    background-color: #FF0000;
+}
+
+h1 {
+    font-size: 50px;
+    font-family: sans-serif;
+    text-align: center;
+    margin: 10px;
+}
+
+h2 {
+    font-size: 30px;
+    text-align: center;
+    margin: 10px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.eisen {
+    padding: 0;
+    font-size: 20px;
+    font-family: monospace;
+}
+
+p {
+    margin: 10px;
+}
+
+#wachtwoord {
+    font-size: 35px;
+}
+
+button {
+    background-color: black;
+    color: white;
+    font-size: 50px;
+    padding: 15px;
+    width: 250px;
+    height: 150px;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}

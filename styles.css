@@ -41,6 +41,7 @@ p {
 
 #wachtwoord {
     font-size: 35px;
+    max-width: 95vw;
 }
 
 button {
